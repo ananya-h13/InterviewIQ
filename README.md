@@ -55,17 +55,14 @@ Keep the real key in `.env`; do not commit or share that file. The repository ig
 
 ## Run the app
 
-Start the interview experience:
+Start the app:
 
 ```powershell
 streamlit run app.py
 ```
 
-To open the performance dashboard instead, use a separate Streamlit command:
-
-```powershell
-streamlit run dashboard.py
-```
+The interview experience opens by default. Use Streamlit's multipage navigation
+to open the Performance Dashboard.
 
 The application initializes its SQLite database at `database/interviewiq.db` when it starts. This database contains local interview history and is excluded from Git.
 
@@ -84,10 +81,11 @@ Use scores from 1 to 5 and save the completed file as `data/human_evaluation_tem
 ```text
 .
 ├── app.py                         # Interview practice app
-├── dashboard.py                   # History and performance dashboard
 ├── config.py                      # Gemini API configuration
 ├── data/
 │   └── questions.json             # Role-based question bank
+├── pages/
+│   └── dashboard.py               # History and performance dashboard
 ├── database/
 │   ├── db_manager.py              # SQLite persistence
 │   └── __init__.py
